@@ -26,22 +26,12 @@ import java.awt.event.KeyEvent;
 )
 public class QuetzalKeybindsPlugin extends Plugin
 {
-    private final Client client;
-    private final QuetzalKeybindsConfig config;
-    private final KeyManager keyManager;
-    private final ClientThread clientThread;
-    private final OverlayManager overlayManager;
-    private final QuetzalKeybindsOverlay overlay;
-
-    @Inject
-    public QuetzalKeybindsPlugin(Client client, QuetzalKeybindsConfig config, KeyManager keyManager, ClientThread clientThread, OverlayManager overlayManager, QuetzalKeybindsOverlay overlay) {
-        this.client = client;
-        this.config = config;
-        this.keyManager = keyManager;
-        this.clientThread = clientThread;
-        this.overlayManager = overlayManager;
-        this.overlay = overlay;
-    }
+    @Inject private Client client;
+    @Inject private QuetzalKeybindsConfig config;
+    @Inject private KeyManager keyManager;
+    @Inject private ClientThread clientThread;
+    @Inject private OverlayManager overlayManager;
+    @Inject private QuetzalKeybindsOverlay overlay;
 
     @Provides
     QuetzalKeybindsConfig provideConfig(ConfigManager configManager) { return configManager.getConfig(QuetzalKeybindsConfig.class); }
